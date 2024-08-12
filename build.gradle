@@ -1,0 +1,54 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.2'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.func'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	    // Spring Boot 웹 애플리케이션을 위한 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web' // 전통적인 서블릿 기반 웹 애플리케이션을 위한 기본 스타터
+    implementation 'org.springframework.boot:spring-boot-starter-webflux' // 비동기 및 논블로킹 웹 애플리케이션을 위한 스타터
+
+    // Spring Boot에서 유효성 검사를 지원하기 위한 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Lombok을 사용하여 코드의 보일러플레이트를 줄이기 위한 의존성
+    compileOnly 'org.projectlombok:lombok' // 컴파일 시 Lombok을 사용하지만 런타임 의존성은 아님
+    annotationProcessor 'org.projectlombok:lombok' // Lombok 애너테이션 프로세서 설정
+
+    // 개발 중 자동으로 애플리케이션을 재시작하도록 하는 의존성
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Spring Boot의 구성 메타데이터를 처리하기 위한 의존성
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    // 테스트를 위한 의존성
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot의 기본 테스트 스타터
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 플랫폼 런처
+
+    // SpringDoc OpenAPI를 사용하여 API 문서화를 지원하는 의존성
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0' // OpenAPI 문서화 및 UI 지원
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

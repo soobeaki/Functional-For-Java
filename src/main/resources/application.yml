@@ -1,0 +1,49 @@
+api-version: v3
+
+# Server
+server:
+  port: 4885
+  shutdown: graceful
+  
+# Spring boot
+spring:
+  application:
+    name: "functional API"
+  pid:
+    file: functional-${spring.profiles.active}.pid
+  profiles:
+    active: "local"
+  devtools:
+    restart:
+      enabled: true
+    add-properties: true
+  
+# Log
+logging:
+  group:
+    info-group: org.springframework, org.mybatis, io.swagger, org.mariadb.jdbc, org.springframework.web.reactive, reactor, reactor.netty
+  level:
+    root: debug
+    info-group: info
+  file:
+    name: /data/logs/functional-app/functional-app.log
+    max-size: 100MB
+  logback:
+    rollingpolicy:
+      max-history: 30
+      file-name-pattern: /data/logs/functional-app/%d{yyyy-MM}/functional-app.%d{yyyy-MM-dd}.%i.log
+  program-access:
+    level: none
+    
+# Api-Server
+api-server:
+  servers:
+    - name: OPEN
+      domain: http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService
+      
+# Api-Keys
+api-key:
+  keys:
+    - name: holidayInfo
+      key: pO%2FiZd5X0eNFNWyEOKUcR2MYFgOZ%2Bud9als%2BkNiBu6FT5XqvHQ5sK1mW3zgtV%2BGWh%2BaMhfdaMHRzigZ7VtXNcQ%3D%3D
+      

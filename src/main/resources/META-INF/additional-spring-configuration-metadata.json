@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "logging.program-access.level",
+    "type": "java.lang.String",
+    "description": "A description for 'logging.program-access.level'"
+  },
+  {
+    "name": "api-version",
+    "type": "java.lang.String",
+    "description": "API Version"
+  },
+  {
+    "name": "api-server",
+    "type": "com.func.functional.configs.properties.ApiServerConfigProperties",
+    "description": "A description for 'api-server'"
+  },
+  {
+    "name": "api-key",
+    "type": "com.func.functional.configs.properties.ApiKeyConfigProperties",
+    "description": "A description for 'api-key'"
+  }
+]}
