@@ -1,22 +1,40 @@
 {"properties": [
-  {
+      {
+        "name": "logging.program-access.level",
+        "type": "java.lang.String",
+        "description": "A description for 'logging.program-access.level'"
+      },
+      {
+        "name": "api-version",
+        "type": "java.lang.String",
+        "description": "API Version"
+      },
+      {
+        "name": "api-server",
+        "type": "com.func.functional.configs.properties.ApiServerConfigProperties",
+        "description": "A description for 'api-server'"
+      },
+      {
+        "name": "api-key",
+        "type": "com.func.functional.configs.properties.ApiKeyConfigProperties",
+        "description": "A description for 'api-key'"
+      }
+  ],
+  "hints": [{
     "name": "logging.program-access.level",
-    "type": "java.lang.String",
-    "description": "A description for 'logging.program-access.level'"
-  },
-  {
-    "name": "api-version",
-    "type": "java.lang.String",
-    "description": "API Version"
-  },
-  {
-    "name": "api-server",
-    "type": "com.func.functional.configs.properties.ApiServerConfigProperties",
-    "description": "A description for 'api-server'"
-  },
-  {
-    "name": "api-key",
-    "type": "com.func.functional.configs.properties.ApiKeyConfigProperties",
-    "description": "A description for 'api-key'"
-  }
-]}
+    "values": [
+      {
+        "value": "none",
+        "description": "저장하지 않음."
+      },
+      {
+        "value": "error",
+        "description": "오류 발생 시에만 저장."
+      },
+      {
+        "value": "all",
+        "description": "모든 로그 저장."
+      }
+    ]
+  }]
+}

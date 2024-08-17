@@ -35,15 +35,27 @@ logging:
   program-access:
     level: none
     
+# Swagger springdoc-ui Configuration
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html # Swagger UI 경로 => localhost:8000/webjars/swagger-ui.html
+    enabled: true
+    use-root-path: true
+    tags-sorter: alpha
+    doc-expansion: none
+    groups-order: asc
+  api-docs:
+    path: /api-docs
+  cache:
+    disabled: true
+  packages-to-scan: com.func.functional
+  default-consumes-media-type: application/json;charset=UTF-8
+  default-produces-media-type: application/json;charset=UTF-8
+
+    
 # Api-Server
 api-server:
   servers:
-    - name: OPEN
-      domain: http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService
-      
-# Api-Keys
-api-key:
-  keys:
     - name: holidayInfo
+      domain: http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService
       key: pO%2FiZd5X0eNFNWyEOKUcR2MYFgOZ%2Bud9als%2BkNiBu6FT5XqvHQ5sK1mW3zgtV%2BGWh%2BaMhfdaMHRzigZ7VtXNcQ%3D%3D
-      
