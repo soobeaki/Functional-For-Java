@@ -58,7 +58,7 @@ public class RandomGraphService {
      * @param fromDate 시작 날짜 (yyyyMMdd 형식)
      * @param toDate      종료 날짜 (yyyyMMdd 형식)
      */
-    public void randomChart(String fromDate, String toDate) {
+    public List<ChartModel> randomChart(String fromDate, String toDate) {
 	// 공휴일 정보를 API로부터 가져옴
 	Set<String> holidayDates = getHolidaysFromApi();
 
@@ -70,6 +70,8 @@ public class RandomGraphService {
 
 	// 생성된 수익률 데이터를 로그로 출력
 	log.info("Profit Rate Data: {}", profitRateData);
+	
+	return profitRateData;
     }
 
     /**

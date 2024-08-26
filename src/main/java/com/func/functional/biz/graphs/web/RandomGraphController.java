@@ -1,10 +1,13 @@
 package com.func.functional.biz.graphs.web;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.func.functional.biz.graphs.model.ChartModel;
 import com.func.functional.biz.graphs.service.RandomGraphService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -37,7 +40,7 @@ public class RandomGraphController {
      */
     @Operation(summary = "randomChart")
     @GetMapping("/random/chart")
-    public void randomChart(
+    public List<ChartModel> randomChart(
 	    @Parameter(description = "시작일자", example = "20240101") 
 	    @RequestParam(name = "fromDate", required = true) 
 	    @NotNull 
@@ -47,7 +50,7 @@ public class RandomGraphController {
 	    @NotNull 
 	    String toDate) {
 
-	ramdomGraphService.randomChart(fromDate, toDate);
+	return ramdomGraphService.randomChart(fromDate, toDate);
     }
 
 }
