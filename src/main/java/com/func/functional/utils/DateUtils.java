@@ -131,16 +131,35 @@ public class DateUtils {
         return LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT));
     }
 
-    
+    /**
+     * 날짜에 특정 일수, 주, 월, 년을 더한 값을 반환합니다.
+     * 이 메서드는 기본 날짜 포맷(DEFAULT_DATE_FORMAT)을 사용하여 동작합니다.
+     *
+     * @param dateStr    날짜 문자열 (기본 포맷 사용)
+     * @param plusDays   더할 시간 단위 수 (일, 주, 월, 년)
+     * @param dateUnit   시간 단위 ("DAY", "WEEK", "MONTH", "YEAR")
+     * @return           주어진 날짜에서 plusDays만큼 더한 결과를 문자열로 반환
+     */
     public static String plus(String dateStr, Integer plusDays, String dateUnit) {
         return plus(dateStr, DEFAULT_DATE_FORMAT, plusDays, dateUnit);
     }
-    
+
+    /**
+     * 날짜에 특정 일수, 주, 월, 년을 더한 값을 반환합니다.
+     * 주어진 날짜 포맷에 맞추어 동작합니다.
+     *
+     * @param dateStr    날짜 문자열 (주어진 포맷 사용)
+     * @param format     날짜 포맷 (예: "yyyy-MM-dd")
+     * @param plusDays   더할 시간 단위 수 (일, 주, 월, 년)
+     * @param dateUnit   시간 단위 ("DAY", "WEEK", "MONTH", "YEAR")
+     * @return           주어진 날짜에서 plusDays만큼 더한 결과를 포맷에 맞춘 문자열로 반환
+     */
     public static String plus(String dateStr, String format, Integer plusDays, String dateUnit) {
         /*
          * 연산 수행
          */
         LocalDate localDate = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(format));
+        
         switch (dateUnit) {
         case "DAY":
             return localDate.plusDays(plusDays).format(DateTimeFormatter.ofPattern(format));
@@ -154,5 +173,5 @@ public class DateUtils {
             throw new IllegalArgumentException("Unexpected value: " + dateUnit);
         }
     }
-
+    
 }

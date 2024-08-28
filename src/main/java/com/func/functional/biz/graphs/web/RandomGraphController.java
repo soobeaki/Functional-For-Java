@@ -25,8 +25,8 @@ import lombok.RequiredArgsConstructor;
  */
 @RestController
 @RequiredArgsConstructor
-@Tag(name = "Functional", description = "Functional API")
 @RequestMapping(value = "/${api-version}/functional")
+@Tag(name = "Functional", description = "Functional API")
 public class RandomGraphController {
 
     /** RandomGraphService */
@@ -36,21 +36,15 @@ public class RandomGraphController {
      * 주어진 기간에 대한 랜덤 차트를 생성합니다.
      * 
      * @param fromDate 시작 날짜 (yyyyMMdd 형식)
-     * @param toDate      종료 날짜 (yyyyMMdd 형식)
+     * @param toDate   종료 날짜 (yyyyMMdd 형식)
      */
     @Operation(summary = "randomChart")
     @GetMapping("/random/chart")
     public List<ChartModel> randomChart(
-	    @Parameter(description = "시작일자", example = "20240101") 
-	    @RequestParam(name = "fromDate", required = true) 
-	    @NotNull 
-	    String fromDate,
-	    @Parameter(description = "종료일자", example = "20241231") 
-	    @RequestParam(name = "toDate", required = true) 
-	    @NotNull 
-	    String toDate) {
+            @Parameter(description = "시작일자", example = "20240101") @RequestParam(name = "fromDate", required = true) @NotNull String fromDate,
+            @Parameter(description = "종료일자", example = "20241231") @RequestParam(name = "toDate", required = true) @NotNull String toDate) {
 
-	return ramdomGraphService.randomChart(fromDate, toDate);
+        return ramdomGraphService.randomChart(fromDate, toDate);
     }
 
 }
