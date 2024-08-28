@@ -59,3 +59,14 @@ api-server:
     - name: holidayInfo
       domain: http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService
       key: pO%2FiZd5X0eNFNWyEOKUcR2MYFgOZ%2Bud9als%2BkNiBu6FT5XqvHQ5sK1mW3zgtV%2BGWh%2BaMhfdaMHRzigZ7VtXNcQ%3D%3D
+      endpoints:
+        - endpointKey: getHoliDeInfo
+          description: 국경일 정보조회
+        - endpointKey: getRestDeInfo
+          description: 공휴일 정보조회
+        - endpointKey: getAnniversaryInfo
+          description: 기념일 정보조회
+        - endpointKey: get24DivisionsInfo
+          description: 24절기 정보조회
+        - endpointKey: getSundryDayInfo
+          description: 잡절 정보조회
