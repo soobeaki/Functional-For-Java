@@ -1,4 +1,4 @@
-package com.func.functional.biz.graphs.model;
+package com.func.functional.biz.chart.model;
 
 import java.math.BigDecimal;
 
@@ -12,8 +12,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 차트 데이터 모델을 정의하는 클래스입니다.
- * 
  * <p>
  * 이 클래스는 차트의 X축 및 Y축 값을 나타내며, JSON 직렬화 및 Swagger 문서화를 지원합니다.
  * </p>

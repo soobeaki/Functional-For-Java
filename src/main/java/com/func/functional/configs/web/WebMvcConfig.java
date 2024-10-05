@@ -23,7 +23,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) { 
         registry.addMapping("/**")
-                .allowedOrigins("*")                                         // 허용할 출처
+                .allowedOriginPatterns("*")                                         // 허용할 출처
                 .allowedHeaders("*")                                         // 허용할 헤더
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")   // 허용할 메서드
                 .allowCredentials(true);                                     // 자격 증명 허용 여부

@@ -20,7 +20,7 @@ public class ResponseWrapper extends ContentCachingResponseWrapper {
      * @param response 원래의 HttpServletResponse 객체
      */
     public ResponseWrapper(HttpServletResponse response) {
-        super(response);
+	super(response);
     }
 
     /**
@@ -29,6 +29,6 @@ public class ResponseWrapper extends ContentCachingResponseWrapper {
      * @return 응답 본문을 UTF-8 인코딩으로 변환한 문자열
      */
     public String getResponseBody() {
-        return new String(getContentAsByteArray(), StandardCharsets.UTF_8);
+	return new String(getContentAsByteArray(), StandardCharsets.UTF_8);
     }
 }

@@ -1,4 +1,4 @@
-package com.func.functional.biz.graphs.service;
+package com.func.functional.biz.chart.service;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -17,8 +17,8 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.func.functional.biz.chart.model.ChartModel;
 import com.func.functional.biz.client.ApiClient;
-import com.func.functional.biz.graphs.model.ChartModel;
 import com.func.functional.configs.properties.ApiServerConfigProperties;
 import com.func.functional.utils.DateUtils;
 
@@ -26,16 +26,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 서비스 계층의 클래스입니다.
- * 
- * <p>
- * 이 클래스는 랜덤 그래프 생성 로직을 처리합니다.
- * </p>
+ * ChartService
  */
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RandomGraphService {
+public class ChartService {
 
     /** ApiClient */
     private final ApiClient apiClient;
